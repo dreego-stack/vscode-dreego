@@ -17,25 +17,36 @@ Syntax highlighting, snippets, and configuration validation for
 
 ## Install
 
-### Marketplace
-
-Install the published extension from the VS Code Marketplace (search "Dreego").
-
-### From source (development)
+The extension is installed as a symlink from a cloned checkout, so it is
+always up to date with the repository.
 
 ```sh
-git clone https://github.com/dreego-stack/vscode-dreego
-cd vscode-dreego
-npm install
-code --install-extension ./dreego-stack.vscode-dreego-0.1.0.vsix   # after npx @vscode/vsce package
+git clone --depth 1 https://github.com/dreego-stack/vscode-dreego /tmp/vscode-dreego
+cd /tmp/vscode-dreego
+./install.sh
 ```
 
-## Testing
+Restart VS Code afterwards. Uninstall:
+
+```sh
+cd /tmp/vscode-dreego
+./install.sh uninstall
+```
+
+## Development
+
+- `syntaxes/dreego.tmLanguage.json` — grammar
+- `snippets/dreego.json` — snippets
+- `schemas/dreego-config.schema.json` — `dreego.config.json` validation
+- `language-configuration.json` — brackets, word pattern, indentation
+
+### Testing
 
 Grammar tests are snapshot tests against the VSCode TextMate engine:
 
 ```sh
-npm test          # compare against committed .snap goldfiles
+npm install          # dev dependency: vscode-tmgrammar-test
+npm test             # compare against committed .snap goldfiles
 npm run test:update  # regenerate goldfiles after intentional grammar changes
 ```
 

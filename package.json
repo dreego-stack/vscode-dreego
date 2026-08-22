@@ -3,7 +3,6 @@
   "displayName": "Dreego",
   "description": "Syntax highlighting, snippets, and configuration validation for Dreego (.dreego) files",
   "version": "0.1.0",
-  "publisher": "dreego-stack",
   "license": "MPL-2.0",
   "icon": "media/dreego.svg",
   "repository": {
@@ -17,9 +16,7 @@
     "vscode": "^1.80.0"
   },
   "categories": [
-    "Programming Languages",
-    "Formatters",
-    "Linters"
+    "Programming Languages"
   ],
   "keywords": [
     "dreego",
