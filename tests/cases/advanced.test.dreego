@@ -1,0 +1,17 @@
+// SYNTAX TEST "text.html.dreego" "advanced sections"
+<head>
+    <title>{{ title }}</title>
+    {#head}
+</head>
+
+<go>
+    message := "Hello"
+</go>
+
+<div>
+    <@Hero
+        badge="New"
+        title="{{ c.Title() }}"
+    />
+    <@Hero badge="New"><span>child</span></@Hero>
+</div>

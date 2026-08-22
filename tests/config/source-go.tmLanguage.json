@@ -1,0 +1,7 @@
+{
+  "name": "Go (test stub)",
+  "scopeName": "source.go",
+  "patterns": [
+    { "match": "[^\\n]+", "name": "source.go" }
+  ]
+}

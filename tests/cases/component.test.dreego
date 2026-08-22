@@ -1,0 +1,10 @@
+// SYNTAX TEST "text.html.dreego" "component definition"
+Component Card (title string, count int, active bool)
+
+<div>
+    <article class="product-card">
+        <h2>{{ title }}</h2>
+        <p>{{ count }}</p>
+        <div>{#slot}</div>
+    </article>
+</div>

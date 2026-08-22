@@ -1,0 +1,14 @@
+{
+  "contributes": {
+    "languages": [
+      { "id": "dreego", "extensions": [".dreego"] }
+    ],
+    "grammars": [
+      { "language": "dreego", "scopeName": "text.html.dreego", "path": "../../syntaxes/dreego.tmLanguage.json" },
+      { "language": "go", "scopeName": "source.go", "path": "./source-go.tmLanguage.json" },
+      { "language": "javascript", "scopeName": "source.js", "path": "./source-js.tmLanguage.json" },
+      { "language": "css", "scopeName": "source.css", "path": "./source-css.tmLanguage.json" },
+      { "language": "html", "scopeName": "text.html.basic", "path": "./text-html-basic.tmLanguage.json" }
+    ]
+  }
+}

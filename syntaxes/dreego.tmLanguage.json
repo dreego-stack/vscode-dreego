@@ -1,0 +1,189 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Dreego",
+  "scopeName": "text.html.dreego",
+  "fileTypes": [".dreego"],
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#component-header" },
+    { "include": "#imports" },
+    { "include": "#template-expressions" },
+    { "include": "#component-tags" },
+    { "include": "#section-head" },
+    { "include": "#section-go" },
+    { "include": "#section-div" },
+    { "include": "#section-script" },
+    { "include": "#section-style" },
+    { "include": "text.html.basic" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.block.dreego",
+          "begin": "\\{!",
+          "end": "!\\}"
+        }
+      ]
+    },
+    "component-header": {
+      "patterns": [
+        {
+          "name": "meta.header.dreego",
+          "begin": "^Component\\s+(\\w+)",
+          "end": "$",
+          "beginCaptures": {
+            "1": { "name": "entity.name.type.class.dreego" }
+          },
+          "patterns": [
+            {
+              "name": "variable.parameter.dreego",
+              "match": "\\w+(?=\\s+\\w+)"
+            },
+            {
+              "name": "support.type.dreego",
+              "match": "\\b(string|int|int64|float64|bool|any|[A-Z][A-Za-z0-9_.]*|\\*[A-Za-z][A-Za-z0-9_.]*)(?=[,\\)]|\\s*=\\s*)" 
+            }
+          ]
+        }
+      ]
+    },
+    "imports": {
+      "patterns": [
+        {
+          "name": "meta.import.dreego",
+          "match": "^import\\s+(\\w+\\s+)?\"([^\"]+)\"",
+          "captures": {
+            "1": { "name": "entity.name.type.alias.dreego" },
+            "2": { "name": "string.quoted.double.dreego" }
+          }
+        }
+      ]
+    },
+    "template-expressions": {
+      "patterns": [
+        {
+          "name": "keyword.control.conditional.dreego",
+          "match": "\\{#else if\\b|\\{#else\\b|\\{#elseif\\b|\\{#if\\b|\\{/if\\}|\\{#each else\\}|\\{#each\\b|\\{/each\\}|\\{#slot[^}]*\\}|\\{/slot\\}|\\{#head\\}|\\{#verbatim\\b|\\{/verbatim\\}"
+        },
+        {
+          "name": "variable.language.loop.dreego",
+          "match": "\\$loop"
+        },
+        {
+          "name": "support.function.filter.dreego",
+          "match": "\\|\\s*(raw|upper)"
+        },
+        {
+          "name": "string.template.dreego",
+          "contentName": "variable.other.dreego",
+          "begin": "\\{\\{",
+          "end": "\\}\\}",
+          "patterns": [
+            {
+              "name": "support.function.filter.dreego",
+              "match": "\\|\\s*(raw|upper)"
+            },
+            {
+              "name": "variable.language.loop.dreego",
+              "match": "\\$loop"
+            }
+          ]
+        }
+      ]
+    },
+    "component-tags": {
+      "patterns": [
+        {
+          "name": "meta.tag.component.open.dreego",
+          "begin": "<@(\\w+)",
+          "end": ">",
+          "beginCaptures": {
+            "1": { "name": "entity.name.tag.component.dreego" }
+          },
+          "patterns": [
+            {
+              "name": "entity.other.attribute-name.dreego",
+              "match": "\\w+(?=\\s*[=])"
+            },
+            {
+              "name": "string.quoted.double.dreego",
+              "begin": "\"",
+              "end": "\"",
+              "patterns": [
+                { "include": "#template-expressions" },
+                { "include": "#comments" }
+              ]
+            },
+            {
+              "name": "variable.other.dreego",
+              "match": "\\{[^}]*\\}"
+            }
+          ]
+        },
+        {
+          "name": "meta.tag.component.close.dreego",
+          "match": "</@(\\w+)>",
+          "captures": {
+            "1": { "name": "entity.name.tag.component.dreego" }
+          }
+        }
+      ]
+    },
+    "section-head": {
+      "name": "meta.section.head.dreego",
+      "begin": "<head(?=\\s|>)",
+      "end": "</head>",
+      "beginCaptures": { "0": { "name": "entity.name.tag.head.dreego" } },
+      "endCaptures": { "0": { "name": "entity.name.tag.head.dreego" } },
+      "patterns": [
+        { "include": "#comments" },
+        { "include": "#template-expressions" },
+        { "include": "text.html.basic" }
+      ]
+    },
+    "section-go": {
+      "name": "meta.section.go.dreego",
+      "begin": "<go>",
+      "end": "</go>",
+      "beginCaptures": { "0": { "name": "entity.name.tag.go.dreego" } },
+      "endCaptures": { "0": { "name": "entity.name.tag.go.dreego" } },
+      "patterns": [
+        { "include": "source.go" }
+      ]
+    },
+    "section-div": {
+      "name": "meta.section.div.dreego",
+      "begin": "<div(?=\\s|>)",
+      "end": "</div>",
+      "beginCaptures": { "0": { "name": "entity.name.tag.div.dreego" } },
+      "endCaptures": { "0": { "name": "entity.name.tag.div.dreego" } },
+      "patterns": [
+        { "include": "#comments" },
+        { "include": "#template-expressions" },
+        { "include": "#component-tags" },
+        { "include": "text.html.basic" }
+      ]
+    },
+    "section-script": {
+      "name": "meta.section.script.dreego",
+      "begin": "<script>",
+      "end": "</script>",
+      "beginCaptures": { "0": { "name": "entity.name.tag.script.dreego" } },
+      "endCaptures": { "0": { "name": "entity.name.tag.script.dreego" } },
+      "patterns": [
+        { "include": "source.js" }
+      ]
+    },
+    "section-style": {
+      "name": "meta.section.style.dreego",
+      "begin": "<style>",
+      "end": "</style>",
+      "beginCaptures": { "0": { "name": "entity.name.tag.style.dreego" } },
+      "endCaptures": { "0": { "name": "entity.name.tag.style.dreego" } },
+      "patterns": [
+        { "include": "source.css" }
+      ]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+// SYNTAX TEST "text.html.dreego" "route syntax"
+Component Hero (badge string, title string, cta1 string)
+
+import Button "components/Button.dreego"
+
+{! a comment !}
+
+<div>
+    <main class="pt-28">
+        <h1>{{ title }}</h1>
+        {#if cta1 != ""}
+            <a href="/docs">{{ cta1|upper }}</a>
+        {#else if loggedIn}
+            <p>logged in</p>
+        {#else}
+            <p>logged out</p>
+        {/if}
+        {#each items as item}
+            <li>{{ $loop.Index }} {{ item }}</li>
+        {#each else}
+            <li>empty</li>
+        {/each}
+        {#verbatim}{{ raw }}{/verbatim}
+    </main>
+</div>
+
+<style>
+    .card { color: #333; }
+</style>

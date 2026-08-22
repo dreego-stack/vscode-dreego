@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Dreego configuration",
+  "description": "Configuration file for a Dreego application (dreego.config.json)",
+  "type": "object",
+  "properties": {
+    "logging": {
+      "type": "object",
+      "description": "Request logging settings.",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "Enable the RequestLogging middleware.",
+          "default": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "redirects": {
+      "type": "array",
+      "description": "HTTP redirect rules. Exact paths or trailing /* wildcards.",
+      "items": {
+        "type": "object",
+        "required": ["from", "to"],
+        "properties": {
+          "from": {
+            "type": "string",
+            "description": "Source path (exact) or /* wildcard.",
+            "pattern": "^/"
+          },
+          "to": {
+            "type": "string",
+            "description": "Target path (exact) or /* wildcard.",
+            "pattern": "^/"
+          },
+          "status": {
+            "type": "integer",
+            "description": "Redirect status code.",
+            "enum": [301, 302, 303, 307, 308],
+            "default": 302
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "rewrites": {
+      "type": "array",
+      "description": "Transparent path rewrite rules applied before routing. Exact paths or trailing /* wildcards.",
+      "items": {
+        "type": "object",
+        "required": ["from", "to"],
+        "properties": {
+          "from": {
+            "type": "string",
+            "description": "Source path (exact) or /* wildcard.",
+            "pattern": "^/"
+          },
+          "to": {
+            "type": "string",
+            "description": "Target path (exact) or /* wildcard.",
+            "pattern": "^/"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

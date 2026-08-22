@@ -1,0 +1,7 @@
+{
+  "name": "JavaScript (test stub)",
+  "scopeName": "source.js",
+  "patterns": [
+    { "match": "[^\\n]+", "name": "source.js" }
+  ]
+}

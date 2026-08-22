@@ -1,0 +1,30 @@
+# smd.toml — vscode-dreego development container (supply-chain checks, tests)
+# Node available on the host too; the container is used for npm audit isolation.
+
+[project]
+  name = "vscode-dreego"
+
+[container]
+  workdir = "/app"
+
+[security]
+  allow_env = []
+
+[volume]
+  enabled = true
+
+[session]
+  enabled = true
+
+[live]
+  mount_pwd = true
+
+[temp]
+  mount_pwd = true
+  read_only = false
+
+[dockerfile]
+  lines = [
+    "FROM docker.io/node:22-alpine",
+    "RUN apk add --no-cache git",
+  ]

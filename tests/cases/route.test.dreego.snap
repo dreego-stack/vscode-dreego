@@ -1,0 +1,170 @@
+>// SYNTAX TEST "text.html.dreego" "route syntax"
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ text.html.dreego
+>Component Hero (badge string, title string, cta1 string)
+#^^^^^^^^^^ text.html.dreego meta.header.dreego
+#          ^^^^ text.html.dreego meta.header.dreego entity.name.type.class.dreego
+#              ^^ text.html.dreego meta.header.dreego
+#                ^^^^^ text.html.dreego meta.header.dreego variable.parameter.dreego
+#                     ^ text.html.dreego meta.header.dreego
+#                      ^^^^^^ text.html.dreego meta.header.dreego support.type.dreego
+#                            ^^ text.html.dreego meta.header.dreego
+#                              ^^^^^ text.html.dreego meta.header.dreego variable.parameter.dreego
+#                                   ^ text.html.dreego meta.header.dreego
+#                                    ^^^^^^ text.html.dreego meta.header.dreego support.type.dreego
+#                                          ^^ text.html.dreego meta.header.dreego
+#                                            ^^^^ text.html.dreego meta.header.dreego variable.parameter.dreego
+#                                                ^ text.html.dreego meta.header.dreego
+#                                                 ^^^^^^ text.html.dreego meta.header.dreego support.type.dreego
+#                                                       ^ text.html.dreego meta.header.dreego
+>
+>import Button "components/Button.dreego"
+#^^^^^^^ text.html.dreego meta.import.dreego
+#       ^^^^^^^ text.html.dreego meta.import.dreego entity.name.type.alias.dreego
+#              ^ text.html.dreego meta.import.dreego
+#               ^^^^^^^^^^^^^^^^^^^^^^^^ text.html.dreego meta.import.dreego string.quoted.double.dreego
+#                                       ^ text.html.dreego meta.import.dreego
+>
+>{! a comment !}
+#^^ text.html.dreego comment.block.dreego
+#  ^^^^^^^^^^^ text.html.dreego comment.block.dreego
+#             ^^ text.html.dreego comment.block.dreego
+>
+><div>
+#^^^^ text.html.dreego meta.section.div.dreego entity.name.tag.div.dreego
+#    ^^ text.html.dreego meta.section.div.dreego
+>    <main class="pt-28">
+#^^^^ text.html.dreego meta.section.div.dreego
+#    ^ text.html.dreego meta.section.div.dreego meta.tag.html
+#     ^^^^ text.html.dreego meta.section.div.dreego meta.tag.html entity.name.tag.html
+#         ^ text.html.dreego meta.section.div.dreego meta.tag.html
+#          ^^^^^ text.html.dreego meta.section.div.dreego meta.tag.html entity.other.attribute-name.html
+#               ^ text.html.dreego meta.section.div.dreego meta.tag.html
+#                ^^^^^^^ text.html.dreego meta.section.div.dreego meta.tag.html string.quoted.double.html
+#                       ^ text.html.dreego meta.section.div.dreego meta.tag.html
+>        <h1>{{ title }}</h1>
+#^^^^^^^^ text.html.dreego meta.section.div.dreego
+#        ^ text.html.dreego meta.section.div.dreego meta.tag.html
+#         ^^ text.html.dreego meta.section.div.dreego meta.tag.html entity.name.tag.html
+#           ^ text.html.dreego meta.section.div.dreego meta.tag.html
+#            ^^ text.html.dreego meta.section.div.dreego string.template.dreego
+#              ^^^^^^^ text.html.dreego meta.section.div.dreego string.template.dreego variable.other.dreego
+#                     ^^ text.html.dreego meta.section.div.dreego string.template.dreego
+#                       ^ text.html.dreego meta.section.div.dreego meta.tag.html
+#                        ^ text.html.dreego meta.section.div.dreego meta.tag.html punctuation.definition.tag.begin.html
+#                         ^^ text.html.dreego meta.section.div.dreego meta.tag.html entity.name.tag.html
+#                           ^ text.html.dreego meta.section.div.dreego meta.tag.html
+>        {#if cta1 != ""}
+#^^^^^^^^ text.html.dreego meta.section.div.dreego
+#        ^^^^ text.html.dreego meta.section.div.dreego keyword.control.conditional.dreego
+#            ^^^^^^^^^^^^^ text.html.dreego meta.section.div.dreego
+>            <a href="/docs">{{ cta1|upper }}</a>
+#^^^^^^^^^^^^ text.html.dreego meta.section.div.dreego
+#            ^ text.html.dreego meta.section.div.dreego meta.tag.html
+#             ^ text.html.dreego meta.section.div.dreego meta.tag.html entity.name.tag.html
+#              ^ text.html.dreego meta.section.div.dreego meta.tag.html
+#               ^^^^ text.html.dreego meta.section.div.dreego meta.tag.html entity.other.attribute-name.html
+#                   ^ text.html.dreego meta.section.div.dreego meta.tag.html
+#                    ^^^^^^^ text.html.dreego meta.section.div.dreego meta.tag.html string.quoted.double.html
+#                           ^ text.html.dreego meta.section.div.dreego meta.tag.html
+#                            ^^ text.html.dreego meta.section.div.dreego string.template.dreego
+#                              ^^^^^ text.html.dreego meta.section.div.dreego string.template.dreego variable.other.dreego
+#                                   ^^^^^^ text.html.dreego meta.section.div.dreego string.template.dreego variable.other.dreego support.function.filter.dreego
+#                                         ^ text.html.dreego meta.section.div.dreego string.template.dreego variable.other.dreego
+#                                          ^^ text.html.dreego meta.section.div.dreego string.template.dreego
+#                                            ^ text.html.dreego meta.section.div.dreego meta.tag.html
+#                                             ^ text.html.dreego meta.section.div.dreego meta.tag.html punctuation.definition.tag.begin.html
+#                                              ^ text.html.dreego meta.section.div.dreego meta.tag.html entity.name.tag.html
+#                                               ^ text.html.dreego meta.section.div.dreego meta.tag.html
+>        {#else if loggedIn}
+#^^^^^^^^ text.html.dreego meta.section.div.dreego
+#        ^^^^^^^^^ text.html.dreego meta.section.div.dreego keyword.control.conditional.dreego
+#                 ^^^^^^^^^^^ text.html.dreego meta.section.div.dreego
+>            <p>logged in</p>
+#^^^^^^^^^^^^ text.html.dreego meta.section.div.dreego
+#            ^ text.html.dreego meta.section.div.dreego meta.tag.html
+#             ^ text.html.dreego meta.section.div.dreego meta.tag.html entity.name.tag.html
+#              ^ text.html.dreego meta.section.div.dreego meta.tag.html
+#               ^^^^^^^^^ text.html.dreego meta.section.div.dreego
+#                        ^ text.html.dreego meta.section.div.dreego meta.tag.html
+#                         ^ text.html.dreego meta.section.div.dreego meta.tag.html punctuation.definition.tag.begin.html
+#                          ^ text.html.dreego meta.section.div.dreego meta.tag.html entity.name.tag.html
+#                           ^ text.html.dreego meta.section.div.dreego meta.tag.html
+>        {#else}
+#^^^^^^^^ text.html.dreego meta.section.div.dreego
+#        ^^^^^^ text.html.dreego meta.section.div.dreego keyword.control.conditional.dreego
+#              ^^ text.html.dreego meta.section.div.dreego
+>            <p>logged out</p>
+#^^^^^^^^^^^^ text.html.dreego meta.section.div.dreego
+#            ^ text.html.dreego meta.section.div.dreego meta.tag.html
+#             ^ text.html.dreego meta.section.div.dreego meta.tag.html entity.name.tag.html
+#              ^ text.html.dreego meta.section.div.dreego meta.tag.html
+#               ^^^^^^^^^^ text.html.dreego meta.section.div.dreego
+#                         ^ text.html.dreego meta.section.div.dreego meta.tag.html
+#                          ^ text.html.dreego meta.section.div.dreego meta.tag.html punctuation.definition.tag.begin.html
+#                           ^ text.html.dreego meta.section.div.dreego meta.tag.html entity.name.tag.html
+#                            ^ text.html.dreego meta.section.div.dreego meta.tag.html
+>        {/if}
+#^^^^^^^^ text.html.dreego meta.section.div.dreego
+#        ^^^^^ text.html.dreego meta.section.div.dreego keyword.control.conditional.dreego
+>        {#each items as item}
+#^^^^^^^^ text.html.dreego meta.section.div.dreego
+#        ^^^^^^ text.html.dreego meta.section.div.dreego keyword.control.conditional.dreego
+#              ^^^^^^^^^^^^^^^^ text.html.dreego meta.section.div.dreego
+>            <li>{{ $loop.Index }} {{ item }}</li>
+#^^^^^^^^^^^^ text.html.dreego meta.section.div.dreego
+#            ^ text.html.dreego meta.section.div.dreego meta.tag.html
+#             ^^ text.html.dreego meta.section.div.dreego meta.tag.html entity.name.tag.html
+#               ^ text.html.dreego meta.section.div.dreego meta.tag.html
+#                ^^ text.html.dreego meta.section.div.dreego string.template.dreego
+#                  ^ text.html.dreego meta.section.div.dreego string.template.dreego variable.other.dreego
+#                   ^^^^^ text.html.dreego meta.section.div.dreego string.template.dreego variable.other.dreego variable.language.loop.dreego
+#                        ^^^^^^^ text.html.dreego meta.section.div.dreego string.template.dreego variable.other.dreego
+#                               ^^ text.html.dreego meta.section.div.dreego string.template.dreego
+#                                 ^ text.html.dreego meta.section.div.dreego
+#                                  ^^ text.html.dreego meta.section.div.dreego string.template.dreego
+#                                    ^^^^^^ text.html.dreego meta.section.div.dreego string.template.dreego variable.other.dreego
+#                                          ^^ text.html.dreego meta.section.div.dreego string.template.dreego
+#                                            ^ text.html.dreego meta.section.div.dreego meta.tag.html
+#                                             ^ text.html.dreego meta.section.div.dreego meta.tag.html punctuation.definition.tag.begin.html
+#                                              ^^ text.html.dreego meta.section.div.dreego meta.tag.html entity.name.tag.html
+#                                                ^ text.html.dreego meta.section.div.dreego meta.tag.html
+>        {#each else}
+#^^^^^^^^ text.html.dreego meta.section.div.dreego
+#        ^^^^^^^^^^^^ text.html.dreego meta.section.div.dreego keyword.control.conditional.dreego
+>            <li>empty</li>
+#^^^^^^^^^^^^ text.html.dreego meta.section.div.dreego
+#            ^ text.html.dreego meta.section.div.dreego meta.tag.html
+#             ^^ text.html.dreego meta.section.div.dreego meta.tag.html entity.name.tag.html
+#               ^ text.html.dreego meta.section.div.dreego meta.tag.html
+#                ^^^^^ text.html.dreego meta.section.div.dreego
+#                     ^ text.html.dreego meta.section.div.dreego meta.tag.html
+#                      ^ text.html.dreego meta.section.div.dreego meta.tag.html punctuation.definition.tag.begin.html
+#                       ^^ text.html.dreego meta.section.div.dreego meta.tag.html entity.name.tag.html
+#                         ^ text.html.dreego meta.section.div.dreego meta.tag.html
+>        {/each}
+#^^^^^^^^ text.html.dreego meta.section.div.dreego
+#        ^^^^^^^ text.html.dreego meta.section.div.dreego keyword.control.conditional.dreego
+>        {#verbatim}{{ raw }}{/verbatim}
+#^^^^^^^^ text.html.dreego meta.section.div.dreego
+#        ^^^^^^^^^^ text.html.dreego meta.section.div.dreego keyword.control.conditional.dreego
+#                  ^ text.html.dreego meta.section.div.dreego
+#                   ^^ text.html.dreego meta.section.div.dreego string.template.dreego
+#                     ^^^^^ text.html.dreego meta.section.div.dreego string.template.dreego variable.other.dreego
+#                          ^^ text.html.dreego meta.section.div.dreego string.template.dreego
+#                            ^^^^^^^^^^^ text.html.dreego meta.section.div.dreego keyword.control.conditional.dreego
+>    </main>
+#^^^^ text.html.dreego meta.section.div.dreego
+#    ^ text.html.dreego meta.section.div.dreego meta.tag.html
+#     ^ text.html.dreego meta.section.div.dreego meta.tag.html punctuation.definition.tag.begin.html
+#      ^^^^ text.html.dreego meta.section.div.dreego meta.tag.html entity.name.tag.html
+#          ^ text.html.dreego meta.section.div.dreego meta.tag.html
+></div>
+#^^^^^^ text.html.dreego meta.section.div.dreego entity.name.tag.div.dreego
+>
+><style>
+#^^^^^^^ text.html.dreego meta.section.style.dreego entity.name.tag.style.dreego
+>    .card { color: #333; }
+#^^^^^^^^^^^^^^^^^^^^^^^^^^ text.html.dreego meta.section.style.dreego source.css
+></style>
+#^^^^^^^^ text.html.dreego meta.section.style.dreego entity.name.tag.style.dreego
+>

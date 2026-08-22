@@ -1,0 +1,7 @@
+{
+  "name": "CSS (test stub)",
+  "scopeName": "source.css",
+  "patterns": [
+    { "match": "[^\\n]+", "name": "source.css" }
+  ]
+}

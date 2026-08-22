@@ -1,0 +1,83 @@
+{
+  "name": "vscode-dreego",
+  "displayName": "Dreego",
+  "description": "Syntax highlighting, snippets, and configuration validation for Dreego (.dreego) files",
+  "version": "0.1.0",
+  "publisher": "dreego-stack",
+  "license": "MPL-2.0",
+  "icon": "media/dreego.svg",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dreego-stack/vscode-dreego"
+  },
+  "bugs": {
+    "url": "https://github.com/dreego-stack/vscode-dreego/issues"
+  },
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Formatters",
+    "Linters"
+  ],
+  "keywords": [
+    "dreego",
+    "go",
+    "ssr",
+    "templates",
+    "html"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "dreego",
+        "aliases": [
+          "Dreego",
+          "dreego"
+        ],
+        "extensions": [
+          ".dreego"
+        ],
+        "icon": {
+          "light": "./media/dreego.svg",
+          "dark": "./media/dreego.svg"
+        },
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "dreego",
+        "scopeName": "text.html.dreego",
+        "path": "./syntaxes/dreego.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "dreego",
+        "path": "./snippets/dreego.json"
+      }
+    ],
+    "jsonValidation": [
+      {
+        "fileMatch": "dreego.config.json",
+        "url": "./schemas/dreego-config.schema.json"
+      }
+    ],
+    "configurationDefaults": {
+      "[dreego]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4,
+        "files.trimTrailingWhitespace": true
+      }
+    }
+  },
+  "scripts": {
+    "test": "vscode-tmgrammar-snap --config tests/config/grammar-config.json 'tests/cases/*.test.dreego'",
+    "test:update": "vscode-tmgrammar-snap --updateSnapshot --config tests/config/grammar-config.json 'tests/cases/*.test.dreego'"
+  },
+  "devDependencies": {
+    "vscode-tmgrammar-test": "0.1.3"
+  }
+}

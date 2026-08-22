@@ -1,0 +1,25 @@
+{
+  "name": "HTML (test stub)",
+  "scopeName": "text.html.basic",
+  "patterns": [
+    {
+      "name": "meta.tag.html",
+      "begin": "<(/?)([a-zA-Z][a-zA-Z0-9-]*)",
+      "end": ">",
+      "beginCaptures": {
+        "1": { "name": "punctuation.definition.tag.begin.html" },
+        "2": { "name": "entity.name.tag.html" }
+      },
+      "patterns": [
+        {
+          "name": "entity.other.attribute-name.html",
+          "match": "[a-zA-Z-]+(?=\\s*[=])"
+        },
+        {
+          "name": "string.quoted.double.html",
+          "match": "\"[^\"]*\""
+        }
+      ]
+    }
+  ]
+}

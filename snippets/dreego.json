@@ -1,0 +1,96 @@
+{
+  "Component with props": {
+    "prefix": "component",
+    "body": [
+      "Component ${1:Name} (${2:prop string})",
+      "",
+      "<div>",
+      "\t${3:<!-- content -->}",
+      "</div>"
+    ],
+    "description": "New Dreego component with props"
+  },
+  "Component with props and default slot": {
+    "prefix": "component-slot",
+    "body": [
+      "Component ${1:Name} (${2:prop string})",
+      "",
+      "<div>",
+      "\t{#slot}",
+      "</div>"
+    ],
+    "description": "New Dreego component with a default slot"
+  },
+  "Import component": {
+    "prefix": "import",
+    "body": "import ${1:Alias} \"${2:components/$1.dreego}\"",
+    "description": "Import a Dreego component"
+  },
+  "Route with head, go and div": {
+    "prefix": "route",
+    "body": [
+      "<head>",
+      "\t<title>${1:Page}</title>",
+      "</head>",
+      "",
+      "<go>",
+      "\t${2:message := \"Hello from Dreego\"}",
+      "</go>",
+      "",
+      "<div>",
+      "\t<h1>{{ $2 }}</h1>",
+      "</div>"
+    ],
+    "description": "New Dreego route (head + go + div)"
+  },
+  "if block": {
+    "prefix": "if",
+    "body": ["{#if ${1:cond}}", "\t$2", "{#else}", "\t$3", "{/if}"],
+    "description": "Conditional block"
+  },
+  "if/else if block": {
+    "prefix": "elseif",
+    "body": ["{#else if ${1:cond}}", "\t${2}"],
+    "description": "Else-if branch"
+  },
+  "each block": {
+    "prefix": "each",
+    "body": ["{#each ${1:items} as ${2:item}}", "\t$3", "{#each else}", "\t$4", "{/each}"],
+    "description": "Iterate over a slice"
+  },
+  "verbatim block": {
+    "prefix": "verbatim",
+    "body": ["{#verbatim}", "${1}", "{/verbatim}"],
+    "description": "Raw output without escaping"
+  },
+  "Component call": {
+    "prefix": "call",
+    "body": "<@${1:ComponentName}${2: prop=\"${3:value}\"}/>",
+    "description": "Call a Dreego component"
+  },
+  "Component call with children": {
+    "prefix": "call-open",
+    "body": ["<@${1:ComponentName}${2: prop=\"${3:value}\"}>", "\t$4", "</@$1>"],
+    "description": "Call a Dreego component with children"
+  },
+  "Head section": {
+    "prefix": "head",
+    "body": ["<head>", "\t<title>${1:Page}</title>", "</head>"],
+    "description": "Head section for metadata and scripts"
+  },
+  "Go section": {
+    "prefix": "go",
+    "body": ["<go>", "\t${1}", "</go>"],
+    "description": "Go code section"
+  },
+  "Style section": {
+    "prefix": "style",
+    "body": ["<style>", "\t${1}", "</style>"],
+    "description": "Scoped CSS section"
+  },
+  "Script section": {
+    "prefix": "script",
+    "body": ["<script>", "\t${1}", "</script>"],
+    "description": "JavaScript section"
+  }
+}
