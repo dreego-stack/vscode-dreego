@@ -10,9 +10,9 @@
     { "include": "#template-expressions" },
     { "include": "#component-tags" },
     { "include": "#section-head" },
-    { "include": "#section-go" },
-    { "include": "#section-div" },
-    { "include": "#section-script" },
+    { "include": "#section-server" },
+    { "include": "#section-body" },
+    { "include": "#section-client" },
     { "include": "#section-style" },
     { "include": "text.html.basic" }
   ],
@@ -142,22 +142,22 @@
         { "include": "text.html.basic" }
       ]
     },
-    "section-go": {
-      "name": "meta.section.go.dreego",
-      "begin": "<go>",
-      "end": "</go>",
-      "beginCaptures": { "0": { "name": "entity.name.tag.go.dreego" } },
-      "endCaptures": { "0": { "name": "entity.name.tag.go.dreego" } },
+    "section-server": {
+      "name": "meta.section.server.dreego",
+      "begin": "<server(?=\\s|>)",
+      "end": "</server>",
+      "beginCaptures": { "0": { "name": "entity.name.tag.server.dreego" } },
+      "endCaptures": { "0": { "name": "entity.name.tag.server.dreego" } },
       "patterns": [
         { "include": "source.go" }
       ]
     },
-    "section-div": {
-      "name": "meta.section.div.dreego",
-      "begin": "<div(?=\\s|>)",
-      "end": "</div>",
-      "beginCaptures": { "0": { "name": "entity.name.tag.div.dreego" } },
-      "endCaptures": { "0": { "name": "entity.name.tag.div.dreego" } },
+    "section-body": {
+      "name": "meta.section.body.dreego",
+      "begin": "<body(?=\\s|>)",
+      "end": "</body>",
+      "beginCaptures": { "0": { "name": "entity.name.tag.body.dreego" } },
+      "endCaptures": { "0": { "name": "entity.name.tag.body.dreego" } },
       "patterns": [
         { "include": "#comments" },
         { "include": "#template-expressions" },
@@ -165,12 +165,12 @@
         { "include": "text.html.basic" }
       ]
     },
-    "section-script": {
-      "name": "meta.section.script.dreego",
-      "begin": "<script>",
-      "end": "</script>",
-      "beginCaptures": { "0": { "name": "entity.name.tag.script.dreego" } },
-      "endCaptures": { "0": { "name": "entity.name.tag.script.dreego" } },
+    "section-client": {
+      "name": "meta.section.client.dreego",
+      "begin": "<client(?=\\s|>)",
+      "end": "</client>",
+      "beginCaptures": { "0": { "name": "entity.name.tag.client.dreego" } },
+      "endCaptures": { "0": { "name": "entity.name.tag.client.dreego" } },
       "patterns": [
         { "include": "source.js" }
       ]
