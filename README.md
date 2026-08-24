@@ -7,7 +7,7 @@ Syntax highlighting, snippets, and configuration validation for
 
 - Full syntax highlighting for `.dreego` files:
   - `Component` headers with typed props, `import` statements
-  - Sections `<head>`, `<go>`, `<div>`, `<script>`, `<style>`
+  - Sections `<server>`, `<head>`, `<body>`, `<style>`, `<client>`
   - Template expressions `{{ ... }}` with `raw`/`upper` filters
   - Logic blocks `{#if}` / `{#else if}` / `{#each}` / `{#slot}` / `{#verbatim}`
   - Component calls `<@Component prop="value"/>` and `<@Component>...</@Component>`

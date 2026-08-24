@@ -4,9 +4,9 @@
     "body": [
       "Component ${1:Name} (${2:prop string})",
       "",
-      "<div>",
+      "<body>",
       "\t${3:<!-- content -->}",
-      "</div>"
+      "</body>"
     ],
     "description": "New Dreego component with props"
   },
@@ -15,9 +15,9 @@
     "body": [
       "Component ${1:Name} (${2:prop string})",
       "",
-      "<div>",
+      "<body>",
       "\t{#slot}",
-      "</div>"
+      "</body>"
     ],
     "description": "New Dreego component with a default slot"
   },
@@ -26,22 +26,22 @@
     "body": "import ${1:Alias} \"${2:components/$1.dreego}\"",
     "description": "Import a Dreego component"
   },
-  "Route with head, go and div": {
+  "Route with head, server and body": {
     "prefix": "route",
     "body": [
       "<head>",
       "\t<title>${1:Page}</title>",
       "</head>",
       "",
-      "<go>",
+      "<server>",
       "\t${2:message := \"Hello from Dreego\"}",
-      "</go>",
+      "</server>",
       "",
-      "<div>",
+      "<body>",
       "\t<h1>{{ $2 }}</h1>",
-      "</div>"
+      "</body>"
     ],
-    "description": "New Dreego route (head + go + div)"
+    "description": "New Dreego route (head + server + body)"
   },
   "if block": {
     "prefix": "if",
@@ -78,19 +78,19 @@
     "body": ["<head>", "\t<title>${1:Page}</title>", "</head>"],
     "description": "Head section for metadata and scripts"
   },
-  "Go section": {
-    "prefix": "go",
-    "body": ["<go>", "\t${1}", "</go>"],
-    "description": "Go code section"
+  "Server section": {
+    "prefix": "server",
+    "body": ["<server>", "\t${1}", "</server>"],
+    "description": "Server-side Go section"
   },
   "Style section": {
     "prefix": "style",
     "body": ["<style>", "\t${1}", "</style>"],
     "description": "Scoped CSS section"
   },
-  "Script section": {
-    "prefix": "script",
-    "body": ["<script>", "\t${1}", "</script>"],
-    "description": "JavaScript section"
+  "Client section": {
+    "prefix": "client",
+    "body": ["<client>", "\t${1}", "</client>"],
+    "description": "Client-side JavaScript section"
   }
 }

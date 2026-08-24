@@ -5,7 +5,7 @@ import Button "components/Button.dreego"
 
 {! a comment !}
 
-<div>
+<body>
     <main class="pt-28">
         <h1>{{ title }}</h1>
         {#if cta1 != ""}
@@ -22,7 +22,7 @@ import Button "components/Button.dreego"
         {/each}
         {#verbatim}{{ raw }}{/verbatim}
     </main>
-</div>
+</body>
 
 <style>
     .card { color: #333; }
