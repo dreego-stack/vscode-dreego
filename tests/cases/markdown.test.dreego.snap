@@ -1,0 +1,42 @@
+>// SYNTAX TEST "text.html.dreego" "markdown sections"
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ text.html.dreego
+><body lang="md">
+#^^^^^ text.html.dreego meta.section.body.md.dreego entity.name.tag.body.dreego
+#     ^^^^^^^^^^^^ text.html.dreego meta.section.body.md.dreego
+># Title
+#^^^^^^^^ text.html.dreego meta.section.body.md.dreego
+>
+>{#if show}
+#^^^^ text.html.dreego meta.section.body.md.dreego keyword.control.conditional.dreego
+#    ^^^^^^^ text.html.dreego meta.section.body.md.dreego
+>Some **bold** text with {{ name }}.
+#^^^^^^^^^^^^^^^^^^^^^^^^ text.html.dreego meta.section.body.md.dreego
+#                        ^^ text.html.dreego meta.section.body.md.dreego string.template.dreego
+#                          ^^^^^^ text.html.dreego meta.section.body.md.dreego string.template.dreego variable.other.dreego
+#                                ^^ text.html.dreego meta.section.body.md.dreego string.template.dreego
+#                                  ^^ text.html.dreego meta.section.body.md.dreego
+>{/if}
+#^^^^^ text.html.dreego meta.section.body.md.dreego keyword.control.conditional.dreego
+></body>
+#^^^^^^^ text.html.dreego meta.section.body.md.dreego entity.name.tag.body.dreego
+>
+><body>
+#^^^^^ text.html.dreego meta.section.body.dreego entity.name.tag.body.dreego
+#     ^^ text.html.dreego meta.section.body.dreego
+>    <md class="prose">
+#^^^^ text.html.dreego meta.section.body.dreego
+#    ^^^ text.html.dreego meta.section.body.dreego meta.section.md.dreego entity.name.tag.md.dreego
+#       ^^^^^^^^^^^^^^^^ text.html.dreego meta.section.body.dreego meta.section.md.dreego
+>        # Heading
+#^^^^^^^^^^^^^^^^^^ text.html.dreego meta.section.body.dreego meta.section.md.dreego
+>        {{ content }}
+#^^^^^^^^ text.html.dreego meta.section.body.dreego meta.section.md.dreego
+#        ^^ text.html.dreego meta.section.body.dreego meta.section.md.dreego string.template.dreego
+#          ^^^^^^^^^ text.html.dreego meta.section.body.dreego meta.section.md.dreego string.template.dreego variable.other.dreego
+#                   ^^ text.html.dreego meta.section.body.dreego meta.section.md.dreego string.template.dreego
+>    </md>
+#^^^^ text.html.dreego meta.section.body.dreego meta.section.md.dreego
+#    ^^^^^ text.html.dreego meta.section.body.dreego meta.section.md.dreego entity.name.tag.md.dreego
+></body>
+#^^^^^^^ text.html.dreego meta.section.body.dreego entity.name.tag.body.dreego
+>

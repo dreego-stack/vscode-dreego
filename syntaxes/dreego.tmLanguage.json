@@ -10,6 +10,7 @@
     { "include": "#template-expressions" },
     { "include": "#component-tags" },
     { "include": "#section-head" },
+    { "include": "#section-md-body" },
     { "include": "#section-server" },
     { "include": "#section-body" },
     { "include": "#section-client" },
@@ -162,6 +163,7 @@
         { "include": "#comments" },
         { "include": "#template-expressions" },
         { "include": "#component-tags" },
+        { "include": "#section-md" },
         { "include": "text.html.basic" }
       ]
     },
@@ -173,6 +175,32 @@
       "endCaptures": { "0": { "name": "entity.name.tag.client.dreego" } },
       "patterns": [
         { "include": "source.js" }
+      ]
+    },
+    "section-md": {
+      "name": "meta.section.md.dreego",
+      "begin": "<md(?=\\s|>)",
+      "end": "</md>",
+      "beginCaptures": { "0": { "name": "entity.name.tag.md.dreego" } },
+      "endCaptures": { "0": { "name": "entity.name.tag.md.dreego" } },
+      "patterns": [
+        { "include": "#comments" },
+        { "include": "#template-expressions" },
+        { "include": "#component-tags" },
+        { "include": "text.html.basic" }
+      ]
+    },
+    "section-md-body": {
+      "name": "meta.section.body.md.dreego",
+      "begin": "<body(?=[^>]*lang=\"md\")",
+      "end": "</body>",
+      "beginCaptures": { "0": { "name": "entity.name.tag.body.dreego" } },
+      "endCaptures": { "0": { "name": "entity.name.tag.body.dreego" } },
+      "patterns": [
+        { "include": "#comments" },
+        { "include": "#template-expressions" },
+        { "include": "#component-tags" },
+        { "include": "text.html.basic" }
       ]
     },
     "section-style": {
