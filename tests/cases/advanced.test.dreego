@@ -4,19 +4,14 @@
     {#head}
 </head>
 
-<server lang="go">
+<server>
     message := "Hello"
 </server>
 
-<body lang="html">
+<body>
     <@Hero
         badge="New"
         title="{{ c.Title() }}"
     />
     <@Hero badge="New"><span>child</span></@Hero>
-    <script>document.documentElement.dataset.ready = "true"</script>
 </body>
-
-<client lang="js">
-    console.log("ready")
-</client>

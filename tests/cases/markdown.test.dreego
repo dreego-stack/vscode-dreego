@@ -1,0 +1,15 @@
+// SYNTAX TEST "text.html.dreego" "markdown sections"
+<body lang="md">
+# Title
+
+{#if show}
+Some **bold** text with {{ name }}.
+{/if}
+</body>
+
+<body>
+    <md class="prose">
+        # Heading
+        {{ content }}
+    </md>
+</body>

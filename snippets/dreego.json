@@ -92,5 +92,15 @@
     "prefix": "client",
     "body": ["<client>", "\t${1}", "</client>"],
     "description": "Client-side JavaScript section"
+  },
+  "Markdown block": {
+    "prefix": "md",
+    "body": ["<md class=\"${1:prose}\">", "\t$2", "</md>"],
+    "description": "Inline markdown block"
+  },
+  "Markdown body": {
+    "prefix": "body-md",
+    "body": ["<body lang=\"md\">", "\t$1", "</body>"],
+    "description": "Body section rendered as markdown"
   }
 }

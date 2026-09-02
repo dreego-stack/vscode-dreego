@@ -21,17 +21,17 @@
 ></head>
 #^^^^^^^ text.html.dreego meta.section.head.dreego entity.name.tag.head.dreego
 >
-><server lang="go">
+><server>
 #^^^^^^^ text.html.dreego meta.section.server.dreego entity.name.tag.server.dreego
-#       ^^^^^^^^^^^ text.html.dreego meta.section.server.dreego source.go
+#       ^ text.html.dreego meta.section.server.dreego source.go
 >    message := "Hello"
 #^^^^^^^^^^^^^^^^^^^^^^ text.html.dreego meta.section.server.dreego source.go
 ></server>
 #^^^^^^^^^ text.html.dreego meta.section.server.dreego entity.name.tag.server.dreego
 >
-><body lang="html">
+><body>
 #^^^^^ text.html.dreego meta.section.body.dreego entity.name.tag.body.dreego
-#     ^^^^^^^^^^^^^^ text.html.dreego meta.section.body.dreego
+#     ^^ text.html.dreego meta.section.body.dreego
 >    <@Hero
 #^^^^ text.html.dreego meta.section.body.dreego
 #    ^^ text.html.dreego meta.section.body.dreego meta.tag.component.open.dreego
@@ -77,24 +77,6 @@
 #                                         ^^^ text.html.dreego meta.section.body.dreego meta.tag.component.close.dreego
 #                                            ^^^^ text.html.dreego meta.section.body.dreego meta.tag.component.close.dreego entity.name.tag.component.dreego
 #                                                ^ text.html.dreego meta.section.body.dreego meta.tag.component.close.dreego
->    <script>document.documentElement.dataset.ready = "true"</script>
-#^^^^ text.html.dreego meta.section.body.dreego
-#    ^ text.html.dreego meta.section.body.dreego meta.tag.html
-#     ^^^^^^ text.html.dreego meta.section.body.dreego meta.tag.html entity.name.tag.html
-#           ^ text.html.dreego meta.section.body.dreego meta.tag.html
-#            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ text.html.dreego meta.section.body.dreego
-#                                                           ^ text.html.dreego meta.section.body.dreego meta.tag.html
-#                                                            ^ text.html.dreego meta.section.body.dreego meta.tag.html punctuation.definition.tag.begin.html
-#                                                             ^^^^^^ text.html.dreego meta.section.body.dreego meta.tag.html entity.name.tag.html
-#                                                                   ^ text.html.dreego meta.section.body.dreego meta.tag.html
 ></body>
 #^^^^^^^ text.html.dreego meta.section.body.dreego entity.name.tag.body.dreego
->
-><client lang="js">
-#^^^^^^^ text.html.dreego meta.section.client.dreego entity.name.tag.client.dreego
-#       ^^^^^^^^^^^ text.html.dreego meta.section.client.dreego source.js
->    console.log("ready")
-#^^^^^^^^^^^^^^^^^^^^^^^^ text.html.dreego meta.section.client.dreego source.js
-></client>
-#^^^^^^^^^ text.html.dreego meta.section.client.dreego entity.name.tag.client.dreego
 >
