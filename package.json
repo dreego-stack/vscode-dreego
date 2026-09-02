@@ -1,10 +1,11 @@
 {
   "name": "vscode-dreego",
   "displayName": "Dreego",
+  "publisher": "dreego-stack",
   "description": "Syntax highlighting, snippets, and configuration validation for Dreego (.dreego) files",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "license": "MPL-2.0",
-  "icon": "media/dreego.svg",
+  "icon": "media/dreego.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/dreego-stack/vscode-dreego"

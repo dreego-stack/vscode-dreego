@@ -1,0 +1,10 @@
+.github/**
+.gitignore
+.vscode/**
+tests/**
+smd.toml
+node_modules/**
+**/*.map
+**/*.ts
+**/tsconfig.json
+.supplycheck/**

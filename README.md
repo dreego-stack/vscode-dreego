@@ -5,54 +5,74 @@ Syntax highlighting, snippets, and configuration validation for
 
 ## Features
 
-- Full syntax highlighting for `.dreego` files:
-  - `Component` headers with typed props, `import` statements
-  - Sections `<server>`, `<head>`, `<body>`, `<style>`, `<client>`
-  - Template expressions `{{ ... }}` with `raw`/`upper` filters
-  - Logic blocks `{#if}` / `{#else if}` / `{#each}` / `{#slot}` / `{#verbatim}`
-  - Component calls `<@Component prop="value"/>` and `<@Component>...</@Component>`
-- Snippets for components, routes, sections, and template blocks
-- JSON validation for `dreego.config.json` (logging, redirects, rewrites)
-- Sensible editor defaults for `.dreego` files
+- **Semantic sections** — highlighting for `<server>`, `<body>`, `<client>`,
+  `<head>`, and `<style>` sections
+- **Markdown bodies** — `<body lang="md">` markdown and the inline `<md>` tag
+- **Component syntax** — `Component Name (props)` headers, typed props,
+  `import` statements, and `<@Component>` calls
+- **Template expressions** — `{{ ... }}` with `raw`/`upper` filters and
+  `{#if}` / `{#each}` / `{#slot}` / `{#verbatim}` blocks
+- **Snippets** — for components, routes, sections, and template blocks
+- **Config validation** — JSON validation for `dreego.config.json` (logging,
+  redirects, rewrites)
 
 ## Install
 
-The extension is installed as a symlink from a cloned checkout, so it is
-always up to date with the repository.
+From the VS Code Marketplace or the Open VSX Registry, or from a local clone:
 
 ```sh
 git clone --depth 1 https://github.com/dreego-stack/vscode-dreego /tmp/vscode-dreego
-cd /tmp/vscode-dreego
-./install.sh
+/tmp/vscode-dreego/install.sh
 ```
 
-Restart VS Code afterwards. Uninstall:
+Restart VS Code afterwards. Remove with `./install.sh uninstall`.
 
-```sh
-cd /tmp/vscode-dreego
-./install.sh uninstall
+## Usage
+
+A route page defines a `Component` header and one or more sections:
+
+```dreego
+Component Home (title string)
+
+<server>
+    now := time.Now()
+</server>
+
+<body>
+    <h1>{{ title }}</h1>
+    <p>Generated at {{ now }}</p>
+    {#if now.Hour() < 12}
+        <p>Good morning.</p>
+    {#else}
+        <p>Good day.</p>
+    {/if}
+</body>
+```
+
+Markdown bodies let you write prose directly:
+
+```dreego
+<body lang="md">
+# Title
+Some **markdown** with {{ name }}.
+</body>
 ```
 
 ## Development
 
 - `syntaxes/dreego.tmLanguage.json` — grammar
 - `snippets/dreego.json` — snippets
-- `schemas/dreego-config.schema.json` — `dreego.config.json` validation
-- `language-configuration.json` — brackets, word pattern, indentation
+- `schemas/dreego-config.schema.json` — config validation
 
 ### Testing
 
-Grammar tests are snapshot tests against the VSCode TextMate engine:
+Snapshot tests against the VSCode TextMate engine:
 
 ```sh
 npm install          # dev dependency: vscode-tmgrammar-test
 npm test             # compare against committed .snap goldfiles
 npm run test:update  # regenerate goldfiles after intentional grammar changes
 ```
-
-The test config in `tests/config/` maps the grammar plus stub grammars for
-`source.go`, `source.js`, `source.css`, and `text.html.basic` so sections can
-be tokenized in isolation without requiring the Go/JS/CSS extensions.
 
 ## License
 
