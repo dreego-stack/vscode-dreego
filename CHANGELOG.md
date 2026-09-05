@@ -3,17 +3,17 @@
 All notable changes to the Dreego VS Code extension are documented in this
 file. Version numbers follow [Semantic Versioning](https://semver.org/).
 
-## [0.3.0] - 2026-09-02
+The extension version is independent of the Dreego framework version.
 
-- v0.3 syntax support: inline `<md>` tag, `<body lang="md">` markdown bodies
+## [0.1.0] - 2026-09-05
+
+- Dreego grammar: semantic sections (`<server>`, `<body>`, `<client>`,
+  `<head>`, `<style>`), markdown bodies (`<body lang="md">`, inline `<md>`),
+  component syntax, template expressions, and control blocks
+- Snippets for components, routes, sections, and template blocks
+- JSON validation for `dreego.config.json`
 - New D monogram logo
-- Semver bump to match the Dreego v0.3 release
-
-## [0.2.0] - 2026-08-24
-
-- Semantic sections: `<server>`, `<body>`, `<client>`
-- Shell-based install (`install.sh`) instead of marketplace publishing
-
-## [0.1.0] - 2026-08-22
-
-- Initial release: grammar, snippets, config schema, snapshot tests
+- Commands: `Dreego: Format Document`, `Dreego: Run Diagnostics`,
+  `Dreego: Select Dreego CLI path`
+- Settings: `dreego.cliPath`, `dreego.formatOnSave`, `dreego.diagnoseOnSave`
+- Tag-triggered CI build that packages the VSIX as a release artifact

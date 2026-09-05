@@ -2,9 +2,13 @@
   "name": "vscode-dreego",
   "displayName": "Dreego",
   "publisher": "dreego-stack",
-  "description": "Syntax highlighting, snippets, and configuration validation for Dreego (.dreego) files",
-  "version": "0.3.0",
+  "description": "Syntax highlighting, snippets, configuration validation, formatting, and diagnostics for Dreego (.dreego) files",
+  "version": "0.1.0",
   "license": "MPL-2.0",
+  "main": "./extension.js",
+  "activationEvents": [
+    "onLanguage:dreego"
+  ],
   "icon": "media/dreego.png",
   "repository": {
     "type": "git",
@@ -68,6 +72,55 @@
         "editor.insertSpaces": true,
         "editor.tabSize": 4,
         "files.trimTrailingWhitespace": true
+      }
+    },
+    "commands": [
+      {
+        "command": "dreego.format",
+        "title": "Dreego: Format Document"
+      },
+      {
+        "command": "dreego.diagnose",
+        "title": "Dreego: Run Diagnostics"
+      },
+      {
+        "command": "dreego.selectDreegoCli",
+        "title": "Dreego: Select Dreego CLI path"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "dreego.format",
+          "when": "resourceLangId == dreego"
+        },
+        {
+          "command": "dreego.diagnose",
+          "when": "resourceLangId == dreego"
+        },
+        {
+          "command": "dreego.selectDreegoCli"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Dreego",
+      "properties": {
+        "dreego.cliPath": {
+          "type": "string",
+          "default": "dreego",
+          "description": "Path to the dreego CLI binary. Defaults to 'dreego' on PATH."
+        },
+        "dreego.formatOnSave": {
+          "type": "boolean",
+          "default": false,
+          "description": "Format the active Dreego document on save."
+        },
+        "dreego.diagnoseOnSave": {
+          "type": "boolean",
+          "default": false,
+          "description": "Run Dreego diagnostics on save."
+        }
       }
     }
   },
