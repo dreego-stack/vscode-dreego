@@ -38,8 +38,8 @@
           ".dreego"
         ],
         "icon": {
-          "light": "./media/dreego.svg",
-          "dark": "./media/dreego.svg"
+          "light": "./media/dreego-logo.svg",
+          "dark": "./media/dreego-logo.svg"
         },
         "configuration": "./language-configuration.json"
       }
